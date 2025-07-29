@@ -1,10 +1,10 @@
 {
-    "name": "szymach/c-pchart",
+    "name": "fabienob/c-pchart",
     "license": "GPL-3.0-only",
     "type": "library",
     "description": "Port of \"pChart\" library into PHP 5+",
     "keywords": ["pchart", "pChart", "statistics", "charts", "CpChart", "c-pChart"],
-    "homepage": "https://github.com/szymach/c-pchart",
+    "homepage": "https://github.com/fabienob/c-pchart",
     "authors": [
         {
             "name": "Jean-Damien Pogolotti",
@@ -45,9 +45,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev",
             "3.0": "3.0.x-dev",
-            "2.0": "2.0.x-dev"
         }
     }
 }
