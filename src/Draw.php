@@ -2566,7 +2566,8 @@ abstract class Draw extends BaseDraw
         $SkippedTickAlpha = isset($Format["SkippedTickAlpha"]) ? $Format["SkippedTickAlpha"] : $TickAlpha - 80;
         $SkippedInnerTickWidth = isset($Format["SkippedInnerTickWidth"]) ? $Format["SkippedInnerTickWidth"] : 0;
         $SkippedOuterTickWidth = isset($Format["SkippedOuterTickWidth"]) ? $Format["SkippedOuterTickWidth"] : 2;
-
+        $YLabelOffset = isset($Format["YLabelOffset"]) ? $Format["YLabelOffset"] : null;
+        
         /* Floating scale require X & Y margins to be set manually */
         if ($Floating && ($XMargin == AUTO || $YMargin == 0)) {
             $Floating = false;
@@ -2828,19 +2829,19 @@ abstract class Draw extends BaseDraw
                     if ($Parameters["Position"] == AXIS_POSITION_BOTTOM) {
                         if ($LabelRotation == 0) {
                             $LabelAlign = TEXT_ALIGN_TOPMIDDLE;
-                            $YLabelOffset = 2;
+                            $YLabelOffset = $YLabelOffset ?? 2;
                         }
                         if ($LabelRotation > 0 && $LabelRotation < 190) {
                             $LabelAlign = TEXT_ALIGN_MIDDLERIGHT;
-                            $YLabelOffset = 5;
+                            $YLabelOffset = $YLabelOffset ?? 5;
                         }
                         if ($LabelRotation == 180) {
                             $LabelAlign = TEXT_ALIGN_BOTTOMMIDDLE;
-                            $YLabelOffset = 5;
+                            $YLabelOffset = $YLabelOffset ?? 5;
                         }
                         if ($LabelRotation > 180 && $LabelRotation < 360) {
                             $LabelAlign = TEXT_ALIGN_MIDDLELEFT;
-                            $YLabelOffset = 2;
+                            $YLabelOffset = $YLabelOffset ?? 2;
                         }
 
                         if (!$RemoveXAxis) {
